@@ -1,3 +1,20 @@
+/**
+ *  This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * @author osman
+ *
+ */
+
 package ada.osman.esmaulhusna;
 
 import ada.osman.esmaulhusna.R;
@@ -40,10 +57,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		
-		/*Uygulama ilk açıldığında SharedPref'den sayaç alınıyor. 
-		 * Oryantasyon değiştikce onCreate tekrar çağırıldığı için böyle bir işlem yapıldı.
-		 * onCreate bir defa çağırılıp ayrı bir listener ile bu işlemi yapmak daha sağlıklı.
+
+		/*
+		 * Uygulama ilk açıldığında SharedPref'den sayaç alınıyor. Oryantasyon
+		 * değiştikce onCreate tekrar çağırıldığı için böyle bir işlem yapıldı.
+		 * onCreate bir defa çağırılıp ayrı bir listener ile bu işlemi yapmak
+		 * daha sağlıklı.
 		 */
 		if (a == 1) {
 			SharedPreferences prefGet = getSharedPreferences("SYC",
@@ -65,16 +84,20 @@ public class MainActivity extends Activity implements OnClickListener {
 		TextView baslik = (TextView) findViewById(R.id.baslik);
 		baslik.setOnClickListener(this);
 
-		/*Buttonların renklerini değiştirme. Bu renklerde button oluşturulup yapılması daha sağlıklı.*/
+		/*
+		 * Buttonların renklerini değiştirme. Bu renklerde button oluşturulup
+		 * yapılması daha sağlıklı.
+		 */
 		b1.getBackground().setColorFilter(0xFFE0FFFF, Mode.MULTIPLY);
 		b2.getBackground().setColorFilter(0xFFE0FFFF, Mode.MULTIPLY);
 
 		b3.getBackground().setColorFilter(0xFFEAF1D5, Mode.MULTIPLY);
 		b4.getBackground().setColorFilter(0xFFEAF1D5, Mode.MULTIPLY);
 
-	
-
-		/*Ekranın oryantasyonuna göre layout üzerindeki buttonları set etmek işlemi*/
+		/*
+		 * Ekranın oryantasyonuna göre layout üzerindeki buttonları set etmek
+		 * işlemi
+		 */
 		try {
 			WindowManager mWindowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 			mDisplay = mWindowManager.getDefaultDisplay();
@@ -104,7 +127,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		a = b;
 	}
 
-	/*Menu oluşturna işlemleri*/
+	/* Menu oluşturna işlemleri */
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater myInf = getMenuInflater();
 		myInf.inflate(R.layout.options_menu, menu);
@@ -145,7 +168,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	}
 
-	/*Program sonlandığında kalınan sayıyı Shared Pref'e kaydet*/
+	/* Program sonlandığında kalınan sayıyı Shared Pref'e kaydet */
 	@Override
 	protected void onStop() {
 		// TODO Auto-generated method stub
@@ -158,7 +181,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	}
 
-	/*Ekranı yeni bilgiler ile doldurma işlemi*/
+	/* Ekranı yeni bilgiler ile doldurma işlemi */
 	public void showImage() {
 		if (a <= 0)
 			a = 99;
@@ -202,7 +225,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		return getString(resId);
 	}
 
-	/*Buttonlar ve başlık için onClick*/
+	/* Buttonlar ve başlık için onClick */
 	public void onClick(View v) {
 		ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
 		if (v.getId() == R.id.ilerib || v.getId() == R.id.ilerib2) {
