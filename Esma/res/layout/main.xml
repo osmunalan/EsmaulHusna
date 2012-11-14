@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ada.osman.esmaulhusna.DragableSpace
+	xmlns:app="http://schemas.android.com/apk/res/ada.osman.esmaulhusna"
+	xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/space"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	app:default_screen="0">
+		<include android:id="@+id/center" layout="@layout/initial_screen" />
+	
+</ada.osman.esmaulhusna.DragableSpace>

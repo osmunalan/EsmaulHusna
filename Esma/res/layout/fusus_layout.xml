@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+     android:background="#FFFFFF"
+    >
+           <TextView
+            android:id="@+id/fusus_head"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_margin="12sp"
+            android:text="Esma'ül Hüsna Hakkında" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+         >
+     
+
+        <TextView
+            android:id="@+id/fusus_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#444444"
+            android:text="@string/fusus" />
+    </ScrollView>
+
+</LinearLayout>

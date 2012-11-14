@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menuEsma"
+        android:icon="@drawable/ic_menu_sun"
+        android:title="Esma'ül Hüsna"/>
+      <item
+        android:id="@+id/menuHakkinda"
+        android:icon="@drawable/ic_menu_light"
+        android:title="Hakkında"/>
+
+    <item
+        android:id="@+id/menuExit"
+        android:icon="@drawable/ic_menu_exit"
+        android:title="Çıkış"/>
+
+</menu>
