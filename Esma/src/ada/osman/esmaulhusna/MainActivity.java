@@ -41,12 +41,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		
-		Log.d("a1", a + "");
+		/*Uygulama ilk açıldığında SharedPref'den sayaç alınıyor. 
+		 * Oryantasyon değiştikce onCreate tekrar çağırıldığı için böyle bir işlem yapıldı.
+		 * onCreate bir defa çağırılıp ayrı bir listener ile bu işlemi yapmak daha sağlıklı.
+		 */
 		if (a == 1) {
 			SharedPreferences prefGet = getSharedPreferences("SYC",
 					Activity.MODE_PRIVATE);
 			a = prefGet.getInt("syc", 1);
-			Log.d("a2", a + "");
 		}
 
 		Button b1 = (Button) findViewById(R.id.ilerib);
@@ -63,6 +65,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		TextView baslik = (TextView) findViewById(R.id.baslik);
 		baslik.setOnClickListener(this);
 
+		/*Buttonların renklerini değiştirme. Bu renklerde button oluşturulup yapılması daha sağlıklı.*/
 		b1.getBackground().setColorFilter(0xFFE0FFFF, Mode.MULTIPLY);
 		b2.getBackground().setColorFilter(0xFFE0FFFF, Mode.MULTIPLY);
 
@@ -71,6 +74,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	
 
+		/*Ekranın oryantasyonuna göre layout üzerindeki buttonları set etmek işlemi*/
 		try {
 			WindowManager mWindowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 			mDisplay = mWindowManager.getDefaultDisplay();
@@ -100,6 +104,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		a = b;
 	}
 
+	/*Menu oluşturna işlemleri*/
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater myInf = getMenuInflater();
 		myInf.inflate(R.layout.options_menu, menu);
@@ -131,7 +136,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.menuEsma:
 			Intent intent = new Intent();
 			intent = new Intent(MainActivity.this,
-					ada.osman.esmaulhusna.Fusus.class);
+					ada.osman.esmaulhusna.Arabi.class);
 			startActivity(intent);
 			return true;
 		}
@@ -140,6 +145,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	}
 
+	/*Program sonlandığında kalınan sayıyı Shared Pref'e kaydet*/
 	@Override
 	protected void onStop() {
 		// TODO Auto-generated method stub
@@ -152,6 +158,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	}
 
+	/*Ekranı yeni bilgiler ile doldurma işlemi*/
 	public void showImage() {
 		if (a <= 0)
 			a = 99;
@@ -195,6 +202,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		return getString(resId);
 	}
 
+	/*Buttonlar ve başlık için onClick*/
 	public void onClick(View v) {
 		ViewFlipper vf = (ViewFlipper) findViewById(R.id.details);
 		if (v.getId() == R.id.ilerib || v.getId() == R.id.ilerib2) {

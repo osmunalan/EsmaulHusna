@@ -17,7 +17,7 @@
             </intent-filter>
             
         </activity>
-         <activity android:name=".Fusus"
+         <activity android:name=".Arabi"
              android:theme="@android:style/Theme.NoTitleBar"   >
              
          </activity>

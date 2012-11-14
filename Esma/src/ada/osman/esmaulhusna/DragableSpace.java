@@ -15,7 +15,12 @@ import android.widget.ScrollView;
 import android.widget.Scroller;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
-
+/***
+ * Bu class sadece resim üzerinden kaydırmalar ile geçişleri sağlamak için kullanılıyor.
+ * 
+ * @author osman
+ *
+ */
 public class DragableSpace extends ViewGroup {
 	private Scroller mScroller;
 	private VelocityTracker mVelocityTracker;
